@@ -1,0 +1,66 @@
+.fpd-wrapper {
+    
+    &.fpd-topbar,
+    &.fpd-off-canvas {
+        
+        > fpd-main-wrapper {
+            flex-basis: 100%;
+        }
+        
+    }
+
+    &.fpd-off-canvas {
+    
+        > fpd-main-wrapper {
+            order: 2 !important;
+        }
+    }
+    
+    > fpd-main-wrapper {
+        
+        display: flex;
+        overflow: hidden;
+        flex: 1 0;
+        min-height: 400px;
+        background: var(--fpd-canvas-bg);
+        transition: opacity 300ms ease-out;
+        order: 3;
+        position: relative;
+        
+        .fpd-product-stage {
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            direction: ltr;
+            max-height: 100%;
+            margin: auto;
+            width: 100%;
+            
+            > .fpd-view-stage {
+                background: rgba(255,255,255, 0.7);
+
+                textarea {
+                    left: -10000px !important;
+                    top: 50% !important;
+                }
+
+            }
+            
+            > .fpd-zoom-image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                max-width: 100%;
+            }
+            
+        }
+        
+        &.fpd-drag canvas {
+            cursor: grab !important;
+        }
+        
+    }
+            
+}
